@@ -5,7 +5,9 @@ from fastapi import FastAPI
 from pydantic import BaseModel, Field
 
 from ml.data import *
-from ml.model import *
+#from model import *
+
+from ml.model import * 
 
 # DO NOT MODIFY
 class Data(BaseModel):

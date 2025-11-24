@@ -1,8 +1,11 @@
 import pickle
 from sklearn.metrics import fbeta_score, precision_score, recall_score
-from ml.data import process_data
+#from ml.data import process_data
 # TODO: add necessary import
 from sklearn.ensemble import RandomForestClassifier
+from sklearn.preprocessing import LabelBinarizer
+
+from ml.data import process_data
 
 # Optional: implement hyperparameter tuning.
 def train_model(X_train, y_train):
@@ -130,7 +133,7 @@ def performance_on_categorical_slice(
     X_slice, y_slice, _, _ = process_data(
         data[data[column_name] == slice_value],
         categorical_features=categorical_features,
-        label=None,
+        label=label,
         training=False,
         encoder=encoder,
         lb=lb
